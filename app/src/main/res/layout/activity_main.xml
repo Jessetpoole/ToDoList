@@ -79,7 +79,7 @@
                         android:textColor="@color/colorDarkGrey"
                         android:text="2020"
                         android:layout_below="@+id/dateDayTv"/>
-                    
+
                 </RelativeLayout>
 
 
@@ -95,6 +95,17 @@
 
 
              </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Today's Tasks"/>
+            </LinearLayout>
 
             </LinearLayout>
     </LinearLayout>
