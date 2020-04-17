@@ -129,7 +129,6 @@
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:drawableTop=""
             android:text="+"
             android:textSize="20sp"
             android:layout_alignParentBottom="true"
