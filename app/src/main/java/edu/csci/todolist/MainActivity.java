@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    // This is just some code for the menu that I currently have, since you are doing the code
+    // This is just some code for a sample menu that I currently have, since you are doing the code
     // for the interface if you think we do not need a menu feel free to delete it as I put a
     // option on the ui to possibly use a button located at the bottom.
     @Override

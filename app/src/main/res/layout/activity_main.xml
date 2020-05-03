@@ -28,7 +28,7 @@
         </androidx.appcompat.widget.Toolbar>
 
 
-
+               // layout for entire app
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -36,41 +36,43 @@
             android:layout_marginRight="16dp"
             android:layout_marginLeft="16dp">
 
-
+                // layout for inside content
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="20dp">
 
+                // layout for Day, Month, Year
                 <RelativeLayout
                     android:layout_width="140dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal">
 
+                // Adjustments for the Month
                     <TextView
                         android:id="@+id/dateMonthTv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="April"
+                        android:text="May"
                         android:textSize="20sp"
                         android:textStyle="bold"
-                        android:layout_marginRight="10dp"
-                        android:layout_alignParentRight="true"
+                        android:layout_marginEnd="10dp"
+                        android:layout_alignParentEnd="true"
                         android:textColor="@color/colorDarkGrey"
                         android:layout_gravity="center_horizontal" />
 
-
+                // Adjustments for the Day
                     <TextView
                         android:id="@+id/dateDayTv"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
-                        android:text="10"
+                        android:text="6"
                         android:textSize="120sp"
                         android:textColor="@color/colorLightGrey"
                         android:layout_gravity="center_horizontal" />
 
-
+                // Adjustments for the Year
                     <TextView
                         android:id="@+id/dateYearTv"
                         android:layout_width="wrap_content"
@@ -99,11 +101,13 @@
 
              </LinearLayout>
 
+            // layout for Tasks
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+            // Calendar drawable icon
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -116,6 +120,8 @@
                     android:textSize="18sp"
                     android:textColor="@color/colorWhite"/>
 
+            // Lists daily tasks
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -126,6 +132,8 @@
             </LinearLayout>
     </LinearLayout>
 
+
+        // Background for possible button if necessary
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"
