@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    // Created a menu, if not wanted please delete
+    <item android:id="@+id/taskmenu"
+          android:icon="@drawable/ic_navigate_next_black_24dp"
+          android:title=""
+          app:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/task1"
+        android:title="Task 1"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/task2"
+        android:title="Task 2"
+        app:showAsAction="never" >
+
+        <menu>
+            <item android:id="@+id/minortask"
+              android:title="Minor Task 1"/>
+
+            <item android:id="@+id/minortask2"
+            android:title="Minor Task 2"/>
+        </menu>
+
+
+
+    </item>
+</menu>
