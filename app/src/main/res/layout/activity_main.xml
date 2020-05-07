@@ -45,7 +45,7 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginEnd="10dp"
                         android:text="MJN"
-                        android:textAlignment="textEnd"
+                        android:textAlignment="viewStart"
                         android:textColor="@color/colorDarkGrey"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -116,9 +116,10 @@
             // Lists daily tasks
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/task_rv"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp" />
 
             </LinearLayout>
 

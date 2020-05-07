@@ -30,11 +30,11 @@ public class MySqlLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "CREATE TABLE " + TODO_TABLE +
-                Todo_Columns.todo_id + "INTEGER PRIMARY KEY AUTOINCREMENT," +
-                Todo_Columns.hour + "INTEGER NOT NULL," +
-                Todo_Columns.minute + "INTEGER NOT NULL," +
-                Todo_Columns.task +  "TEXT NOT NULL )";
+        String sql = "CREATE TABLE " + TODO_TABLE + " (" +
+                Todo_Columns.todo_id + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                Todo_Columns.hour + " INTEGER NOT NULL, " +
+                Todo_Columns.minute + " INTEGER NOT NULL, " +
+                Todo_Columns.task +  " TEXT NOT NULL )";
 
         db.execSQL(sql);
     }

@@ -7,20 +7,42 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
+
+    private DbDataSource dataSource;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TodoTask todoTask = new TodoTask(1, 30, "test");
+        dataSource = new DbDataSource(getApplicationContext());
+
     }
-    // This is just some code for a sample menu that I currently have, since you are doing the code
-    // for the interface if you think we do not need a menu feel free to delete it as I put a
-    // option on the ui to possibly use a button located at the bottom.
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        dataSource.open();
+
+        List<TodoTask> tasks = dataSource.getAllTasks();
+
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        dataSource.close();
+    }
+
+    // Create a menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -28,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    //Menu handler
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
