@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        TodoTask todoTask = new TodoTask(1, 30, "test");
     }
     // This is just some code for a sample menu that I currently have, since you are doing the code
     // for the interface if you think we do not need a menu feel free to delete it as I put a
