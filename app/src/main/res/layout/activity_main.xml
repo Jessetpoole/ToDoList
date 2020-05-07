@@ -12,23 +12,9 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/app_title_main"
+        // layout for entire app
 
-            android:textColor="@color/colorLightGreen"
-            android:textSize="18sp"/>
-
-        </androidx.appcompat.widget.Toolbar>
-
-
-               // layout for entire app
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -50,40 +36,47 @@
                     android:layout_gravity="center_horizontal">
 
                 // Adjustments for the Month
+
                     <TextView
-                        android:id="@+id/dateMonthTv"
+                        android:id="@+id/date_month_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="May"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:layout_marginEnd="10dp"
                         android:layout_alignParentEnd="true"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginEnd="10dp"
+                        android:text="MJN"
+                        android:textAlignment="textEnd"
                         android:textColor="@color/colorDarkGrey"
-                        android:layout_gravity="center_horizontal" />
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
                 // Adjustments for the Day
+
                     <TextView
-                        android:id="@+id/dateDayTv"
+                        android:id="@+id/date_day_tv"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
-                        android:text="6"
-                        android:textSize="120sp"
+                        android:layout_gravity="center_horizontal"
+                        android:text="00"
+                        android:textAlignment="center"
                         android:textColor="@color/colorLightGrey"
-                        android:layout_gravity="center_horizontal" />
+                        android:textSize="120sp" />
 
                 // Adjustments for the Year
+
                     <TextView
-                        android:id="@+id/dateYearTv"
+                        android:id="@+id/date_year_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="-25dp"
+                        android:layout_below="@+id/date_day_tv"
+                        android:layout_alignParentEnd="true"
                         android:layout_marginLeft="80dp"
+                        android:layout_marginTop="-25dp"
+                        android:layout_marginEnd="10dp"
+                        android:text="20--"
                         android:textColor="@color/colorDarkGrey"
-                        android:text="2020"
-                        android:layout_below="@+id/dateDayTv"/>
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                 </RelativeLayout>
 
@@ -134,16 +127,18 @@
 
 
         // Background for possible button if necessary
-        <Button
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:text="+"
-            android:textSize="20sp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="20dp"
-            android:textColor="@color/colorWhite"
-            android:elevation="1dp"
-            android:background="@drawable/add_button"/>
+
+    <Button
+        android:id="@+id/add_task_butn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/add_button"
+        android:elevation="1dp"
+        android:text="+"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp" />
 
 </RelativeLayout>
