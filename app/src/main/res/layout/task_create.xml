@@ -62,7 +62,8 @@
         android:text="+"
         android:textColor="@color/colorWhite"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="303dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView3"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
         tools:layout_editor_absoluteY="321dp" />
 
     <Button
