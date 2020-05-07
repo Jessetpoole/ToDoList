@@ -5,29 +5,63 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+
+//TODO: have a method that checks every now and then if data is still valid by their dates
+
 
 public class MainActivity extends AppCompatActivity
     implements View.OnClickListener {
 
     private DbDataSource dataSource;
 
+    private String[] months = {
+            "Jan", "Feb", "Mar",
+            "Apr", "May", "Jun",
+            "Jul", "Aug", "Sep",
+            "Oct", "Nov", "Dec"
+    };
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        int temp;
+
+        TextView dayTv = findViewById(R.id.date_day_tv);
+        TextView monthTv = findViewById(R.id.date_month_tv);
+        TextView yearTv = findViewById(R.id.date_year_tv);
+
+        //Set Day
+        dayTv.setText(((Integer) new Date().getDate()).toString());
+
+        //Set Month
+        monthTv.setText(months[new Date().getMonth()]);
+
+        //Set year
+        temp = (new Date()).getYear() + 1900;
+        yearTv.setText(((Integer) temp).toString());
+
+
         dataSource = new DbDataSource(getApplicationContext());
 
         findViewById(R.id.add_task_btn).setOnClickListener(this);
+        Log.i("TLD", "Main act");
     }
 
     @Override

@@ -3,6 +3,7 @@ package edu.csci.todolist;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,7 +13,7 @@ implements View.OnClickListener {
 
     int hour = 0;
     int minute = 0;
-    boolean isAm = true;
+    boolean isAM = true;
 
 
     enum Operations{
@@ -31,6 +32,7 @@ implements View.OnClickListener {
         findViewById(R.id.task_add_minute).setOnClickListener(this);
         findViewById(R.id.task_sub_hour).setOnClickListener(this);
         findViewById(R.id.task_sub_minute).setOnClickListener(this);
+        findViewById(R.id.am_pm_btn).setOnClickListener(this);
     }
 
     //This controls when the user adds or subtracts from the desired time
@@ -61,14 +63,32 @@ implements View.OnClickListener {
         updateTextViews();
     }
 
+    public void toggleAM(){
+        Button btn = findViewById(R.id.am_pm_btn);
+        if(isAM){
+            isAM = false;
+            btn.setText("P.M.");
+        }
+        else {
+            isAM = true;
+            btn.setText("A.M.");
+        }
+    }
+
     public void updateTextViews(){
         TextView hourTV = findViewById(R.id.task_hour_tv);
         TextView minTV = findViewById(R.id.task_minute_tv);
 
+        //Handle Hours
         int tempHour = hour + 1;
+        String tempHr;
+        if (tempHour < 10)
+            tempHr = "0" + tempHour;
+        else
+            tempHr = ((Integer) tempHour).toString();
+        hourTV.setText(tempHr);
 
-        hourTV.setText(((Integer) tempHour).toString());
-
+        //Handle Minutes
         String tempMin;
         if (minute < 10)
             tempMin = "0" + minute;
@@ -88,6 +108,16 @@ implements View.OnClickListener {
             changeTaskTime(Operations.SUB, Operands.HOUR);
         else if (view.getId() == R.id.task_sub_minute)
             changeTaskTime(Operations.SUB, Operands.MINUTE);
+        else if (view.getId() == R.id.am_pm_btn)
+            toggleAM();
+        else{
+            Log.i("TLDError", "Something went wrong with the AddTask onCLickListener");
+        }
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Log.i("TLD", "After super");
+    }
 }

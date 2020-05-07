@@ -10,7 +10,7 @@
         android:id="@+id/task_hour_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0"
+        android:text="00"
         android:textAlignment="viewEnd"
         android:textColor="@color/colorLightGrey"
         android:textSize="120sp"
