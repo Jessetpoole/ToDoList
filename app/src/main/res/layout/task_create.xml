@@ -52,4 +52,37 @@
         android:textSize="20sp"
         tools:layout_editor_absoluteX="49dp"
         tools:layout_editor_absoluteY="71dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/add_button"
+        android:text="+"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="303dp"
+        tools:layout_editor_absoluteY="321dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/add_button"
+        android:text="+"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="321dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/add_button"
+        android:text="+"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="303dp"
+        tools:layout_editor_absoluteY="71dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
