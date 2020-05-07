@@ -1,5 +1,6 @@
 package edu.csci.todolist;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -23,6 +24,31 @@ public class DbDataSource {
 
     public void close() {
         database.close();
+    }
+
+    public TodoTask createTask(int iHour, int iMinute, String iTask){
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(MySqlLiteHelper.Todo_Columns.task.toString(), iTask);
+        contentValues.put(MySqlLiteHelper.Todo_Columns.hour.toString(), iHour);
+        contentValues.put(MySqlLiteHelper.Todo_Columns.minute.toString(), iMinute);
+
+        long id = database.insert(MySqlLiteHelper.TODO_TABLE,
+                null, contentValues);
+
+        String[] columnNames = MySqlLiteHelper.Todo_Columns.names();
+
+        //select * from todo where comment_id = *
+        Cursor cursor = database.query(MySqlLiteHelper.TODO_TABLE,
+                columnNames,
+                MySqlLiteHelper.Todo_Columns.todo_id + " = " + id,
+                null, null, null, null);
+
+        cursor.moveToFirst();
+        TodoTask task = cursorToTask(cursor);
+        cursor.close();
+
+        return task;
     }
 
     public List<TodoTask> getAllTasks(){
