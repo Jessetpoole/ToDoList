@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+    implements View.OnClickListener {
 
     private DbDataSource dataSource;
 
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         dataSource = new DbDataSource(getApplicationContext());
+
 
     }
 
@@ -49,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
         inflater.inflate(R.menu.menu,menu);
         return true;
     }
-
     //Menu handler
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -69,6 +71,11 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             default:return super.onOptionsItemSelected(item);
         }
+
+    }
+
+    @Override
+    public void onClick(View view) {
 
     }
 }

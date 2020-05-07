@@ -7,86 +7,122 @@
     android:background="@color/colorPrimary">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/task_hour_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="00"
+        android:text="0"
         android:textAlignment="viewEnd"
+        android:textColor="@color/colorLightGrey"
         android:textSize="120sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2"
-        app:layout_constraintEnd_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="@+id/textView2" />
+        app:layout_constraintBottom_toBottomOf="@+id/task_colon"
+        app:layout_constraintEnd_toStartOf="@+id/task_colon"
+        app:layout_constraintTop_toTopOf="@+id/task_colon" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/task_colon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=" : "
+        android:text=":"
+        android:textColor="@color/colorLightGrey"
         android:textAlignment="viewEnd"
         android:textSize="120sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.24000001" />
+        app:layout_constraintVertical_bias="0.19" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/task_minute_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="00"
+        android:textColor="@color/colorLightGrey"
         android:textAlignment="viewEnd"
         android:textSize="120sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="@+id/textView2"
+        app:layout_constraintBottom_toBottomOf="@+id/task_colon"
+        app:layout_constraintStart_toEndOf="@+id/task_colon"
+        app:layout_constraintTop_toTopOf="@+id/task_colon"
         app:layout_constraintVertical_bias="0.516" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/task_add_hour"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/add_button"
         android:text="+"
         android:textColor="@color/colorWhite"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView" />
+        app:layout_constraintBottom_toTopOf="@+id/task_hour_tv"
+        app:layout_constraintEnd_toEndOf="@+id/task_hour_tv"
+        app:layout_constraintStart_toStartOf="@+id/task_hour_tv" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/task_add_minute"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/add_button"
         android:text="+"
         android:textColor="@color/colorWhite"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView3"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintBottom_toTopOf="@+id/task_minute_tv"
+        app:layout_constraintEnd_toEndOf="@+id/task_minute_tv"
+        app:layout_constraintStart_toEndOf="@+id/task_colon" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/task_sub_hour"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/add_button"
-        android:text="+"
+        android:text="-"
         android:textColor="@color/colorWhite"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/task_hour_tv"
+        app:layout_constraintStart_toStartOf="@+id/task_hour_tv"
+        app:layout_constraintTop_toBottomOf="@+id/task_hour_tv" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/task_sub_minute"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/add_button"
-        android:text="+"
+        android:text="-"
         android:textColor="@color/colorWhite"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="@+id/textView3"
-        app:layout_constraintStart_toEndOf="@+id/textView2" />
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/task_minute_tv"
+        app:layout_constraintStart_toEndOf="@+id/task_colon"
+        app:layout_constraintTop_toBottomOf="@+id/task_minute_tv" />
+
+    <Button
+        android:id="@+id/am_pm_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="A.M."
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/task_sub_minute"
+        app:layout_constraintStart_toEndOf="@+id/task_sub_hour"
+        app:layout_constraintTop_toBottomOf="@+id/task_colon" />
+
+    <EditText
+        android:id="@+id/task_et"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#27000000"
+        android:ems="10"
+        android:gravity="start"
+        android:hint="Type your To-Do task here!"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/am_pm_btn" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
