@@ -133,7 +133,8 @@ implements View.OnClickListener {
         if(!(givenTask.equals(""))){
             if(!isAM)
                 hour += 12;
-            TodoTask task = dataSource.createTask(hour, minute, givenTask);
+            TodoTask task = new TodoTask();
+            task = dataSource.createTask(hour, minute, givenTask);
             Log.i("TLD", givenTask);
         }
     }

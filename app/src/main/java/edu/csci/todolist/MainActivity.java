@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -71,7 +72,10 @@ public class MainActivity extends AppCompatActivity
         dataSource.open();
 
         List<TodoTask> tasks = dataSource.getAllTasks();
+        //dataSource.createTask(1, 1, "test");
 
+
+        //TODO if current date does not match earliest data entry, reset database
 
     }
 
