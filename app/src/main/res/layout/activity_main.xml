@@ -45,7 +45,7 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginEnd="10dp"
                         android:text="MJN"
-                        android:textAlignment="viewStart"
+                        android:textAlignment="textEnd"
                         android:textColor="@color/colorDarkGrey"
                         android:textSize="20sp"
                         android:textStyle="bold" />
