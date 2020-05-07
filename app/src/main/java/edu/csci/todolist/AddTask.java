@@ -4,12 +4,17 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import javax.sql.DataSource;
+
 public class AddTask extends AppCompatActivity
 implements View.OnClickListener {
+
+    DbDataSource dataSource;
 
     int hour = 0;
     int minute = 0;
@@ -23,6 +28,8 @@ implements View.OnClickListener {
         HOUR, MINUTE
     }
 
+    EditText editText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +40,8 @@ implements View.OnClickListener {
         findViewById(R.id.task_sub_hour).setOnClickListener(this);
         findViewById(R.id.task_sub_minute).setOnClickListener(this);
         findViewById(R.id.am_pm_btn).setOnClickListener(this);
+
+        editText = findViewById(R.id.task_et);
     }
 
     //This controls when the user adds or subtracts from the desired time
@@ -118,6 +127,12 @@ implements View.OnClickListener {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Log.i("TLD", "After super");
+
+        if(!(editText.getText().toString().equals(""))){
+            if(!isAM)
+                hour += 12;
+            TodoTask task = dataSource.createTask(hour, minute, editText.getText().toString());
+            Log.i("TLD", "Task created");
+        }
     }
 }
