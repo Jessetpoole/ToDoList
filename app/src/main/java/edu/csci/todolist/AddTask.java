@@ -128,11 +128,13 @@ implements View.OnClickListener {
     public void onBackPressed() {
         super.onBackPressed();
 
-        if(!(editText.getText().toString().equals(""))){
+        String givenTask = editText.getText().toString();
+
+        if(!(givenTask.equals(""))){
             if(!isAM)
                 hour += 12;
-            TodoTask task = dataSource.createTask(hour, minute, editText.getText().toString());
-            Log.i("TLD", "Task created");
+            TodoTask task = dataSource.createTask(hour, minute, givenTask);
+            Log.i("TLD", givenTask);
         }
     }
 }
