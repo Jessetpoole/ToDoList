@@ -45,7 +45,6 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginEnd="10dp"
                         android:text="MJN"
-                        android:textAlignment="textEnd"
                         android:textColor="@color/colorDarkGrey"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -130,16 +129,16 @@
         // Background for possible button if necessary
 
     <Button
-        android:id="@+id/add_task_butn"
+        android:id="@+id/add_task_btn"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:background="@drawable/add_button"
+        android:text="+"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/add_button"
-        android:elevation="1dp"
-        android:text="+"
-        android:textColor="@color/colorWhite"
-        android:textSize="20sp" />
+        android:elevation="1dp"/>
 
 </RelativeLayout>
