@@ -50,7 +50,8 @@
         android:text="+"
         android:textColor="@color/colorWhite"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="49dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
         tools:layout_editor_absoluteY="71dp" />
 
     <Button
@@ -73,6 +74,7 @@
         android:textColor="@color/colorWhite"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
         tools:layout_editor_absoluteY="321dp" />
 
     <Button
